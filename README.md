@@ -34,7 +34,7 @@ conda activate smvr
   ```
 
 ## 💾 Dataset (with yoho-desc)
-The test datasets preprocessed could be downloaded from [SGHR](https://github.com/WHU-USI3DV/SGHR/tree/master). and :
+The test datasets preprocessed could be downloaded from [SGHR](https://github.com/WHU-USI3DV/SGHR/tree/master) :
 
 [BaiduDesk](https://pan.baidu.com/s/1FcAPjmrsJ6EEPLbtf85Irw)(Code:oouk)
 
