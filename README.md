@@ -5,7 +5,7 @@ In this paper, a spectral method for multiview point cloud registration is prese
 
 ## Prerequisites
 
-This code has been tested on Ubuntu 20.04, CUDA 11.1, python 3.7, Pytorch 1.10.0, GeForce RTX A6000. You can install the required packages by running:
+This code has been tested on Ubuntu 18.04.6, CUDA 11.1.1, python 3.7, Pytorch 1.10.0, GeForce RTX A6000. You can install the required packages by running:
 
 - First, create the conda environment:
 ```
