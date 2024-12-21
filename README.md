@@ -65,12 +65,12 @@ To evalute SMVR on 3DMatch and 3DLoMatch, you can use the following commands:
 python Test_cycle.py --dataset 3dmatch --rr
 ```
 
-To evalute SGHR on ScanNet, you can use the following commands:
+To evalute SMVR on ScanNet, you can use the following commands:
 ```
 python Test_cycle.py --dataset scannet --ecdf
 ```
 
-To evalute SGHR on ETH, you can use the following commands:
+To evalute SMVR on ETH, you can use the following commands:
 ```
 python Test_cycle.py --dataset ETH --topk 6 --inlierd 0.2 --tau_2 0.5 --rr
 ```
@@ -87,3 +87,10 @@ Please consider citing this paper if you find it benefit your work:
   publisher={IEEE}
 }
 ```
+
+## 🔗 Related Projects
+We sincerely thank the fantastic projects:
+- [SGHR](https://github.com/WHU-USI3DV/SGHR/tree/master);
+- [YOHO](https://github.com/HpWang-whu/YOHO);
+- [FCGF](https://github.com/chrischoy/FCGF);
+
