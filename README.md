@@ -94,6 +94,7 @@ Please consider citing this paper if you find it benefit your work:
 ## 🔗 Related Projects
 We sincerely thank the fantastic projects below:
 - [SGHR](https://github.com/WHU-USI3DV/SGHR/tree/master);
+- [MultiReg](https://github.com/yewzijian/MultiReg/tree/master);
 - [YOHO](https://github.com/HpWang-whu/YOHO);
 - [FCGF](https://github.com/chrischoy/FCGF);
 
