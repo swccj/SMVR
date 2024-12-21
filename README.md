@@ -13,7 +13,6 @@ This code has been tested on Ubuntu 18.04.6, CUDA 11.1.1, python 3.7, Pytorch 1.
 ```
 conda create -n smvr python=3.7
 conda activate smvr
-pip install -r requirements.txt
 ```
 
 - Second, intall Pytorch. We have checked version 1.10.0 and other versions can be referred to [Official Set](https://pytorch.org/get-started/previous-versions/).
