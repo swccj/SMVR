@@ -33,9 +33,11 @@ pip install -r requirements.txt
   ```
 
 ## 💾 Dataset (with yoho-desc)
-The datasets are accessible from [SGHR](https://github.com/WHU-USI3DV/SGHR/tree/master) in [BaiduDesk](https://pan.baidu.com/s/1FcAPjmrsJ6EEPLbtf85Irw)(Code:oouk) and Google Cloud:
+The test datasets preprocessed could be downloaded from [SGHR](https://github.com/WHU-USI3DV/SGHR/tree/master). and :
 
-Testset:
+[BaiduDesk](https://pan.baidu.com/s/1FcAPjmrsJ6EEPLbtf85Irw)(Code:oouk)
+
+Google Cloud:
 - [3DMatch/3DLomatch](https://drive.google.com/file/d/1T9fyU2XAYmXwiWZif--j5gP9G8As5cxn/view?usp=sharing);
 - [ScanNet](https://drive.google.com/file/d/1GM6ePDDqZ3awJOZpctd3nqy1VgazV6CD/view?usp=sharing);
 - [ETH](https://drive.google.com/file/d/1MW8SV44fuFTS5b2XrdADaqH5xRf3sLMk/view?usp=sharing).
@@ -62,17 +64,18 @@ data/
 ## ✏️ Test
 To evalute SMVR on 3DMatch and 3DLoMatch, you can use the following commands:
 ```
-python Test_cycle.py --dataset 3dmatch --rr
+python Test_cycle.py --dataset 3dmatch --topk 10 --sigma_d 0.15 --rr
+python Test_cycle.py --dataset 3dLomatch --topk 15 --sigma_d 0.06 --rr
 ```
 
 To evalute SMVR on ScanNet, you can use the following commands:
 ```
-python Test_cycle.py --dataset scannet --ecdf
+python Test_cycle.py --dataset scannet --topk 10 --sigma_d 0.01 --ecdf
 ```
 
 To evalute SMVR on ETH, you can use the following commands:
 ```
-python Test_cycle.py --dataset ETH --topk 6 --inlierd 0.2 --tau_2 0.5 --rr
+python Test_cycle.py --dataset ETH --topk 8 --sigma_d 0.06 --inlierd 0.2 --tau_2 0.5 --rr
 ```
 
 ## 📚 Citation
