@@ -5,10 +5,74 @@ In this paper, a spectral method for multiview point cloud registration is prese
 
 ## Prerequisites
 
-This code has been tested on PyTorch 1.7.1 (w/ Cuda 10.2) with PyTorch Geometric 1.7.1. Note that our code currently does not support PyTorch Geometric v2. You can install the required packages by running:
+This code has been tested on Ubuntu 20.04, CUDA 11.1, python 3.7, Pytorch 1.10.0, GeForce RTX A6000. You can install the required packages by running:
 
-```bash
+- First, create the conda environment:
+```
+conda create -n smvr python=3.7
+conda activate smvr
 pip install -r requirements.txt
+```
+
+- Second, intall Pytorch. We have checked version 1.10.0 and other versions can be referred to [Official Set](https://pytorch.org/get-started/previous-versions/).
+  ```
+  pip install torch==1.10.0+cu111 torchvision==0.11.0+cu111 torchaudio==0.10.0 -f https://download.pytorch.org/whl/torch_stable.html
+  ```
+
+- Third, install other packages, here we use 0.8.0.0 version [Open3d](http://www.open3d.org/):
+  ```
+  pip install -r requirements.txt
+  ```
+
+- Optional. If you want to use SMVR on your own dataset, you should install [MinkowskiEngine](https://github.com/NVIDIA/MinkowskiEngine) for FCGF/YOHO:
+  ```
+  conda install openblas-devel -c anaconda
+  git clone https://github.com/NVIDIA/MinkowskiEngine.git
+  cd MinkowskiEngine
+  python setup.py install --blas_include_dirs=${CONDA_PREFIX}/include --blas=openblas
+  ```
+
+## 💾 Dataset (with yoho-desc)
+The datasets are accessible from [SGHR](https://github.com/WHU-USI3DV/SGHR/tree/master) in [BaiduDesk](https://pan.baidu.com/s/1FcAPjmrsJ6EEPLbtf85Irw)(Code:oouk) and Google Cloud:
+
+Testset:
+- [3DMatch/3DLomatch](https://drive.google.com/file/d/1T9fyU2XAYmXwiWZif--j5gP9G8As5cxn/view?usp=sharing);
+- [ScanNet](https://drive.google.com/file/d/1GM6ePDDqZ3awJOZpctd3nqy1VgazV6CD/view?usp=sharing);
+- [ETH](https://drive.google.com/file/d/1MW8SV44fuFTS5b2XrdADaqH5xRf3sLMk/view?usp=sharing).
+
+Please place the data to ```./data``` following the example data structure as:
+
+```
+data/
+├── 3dmatch/
+    └── kitchen/
+        ├── PointCloud/
+            ├── cloud_bin_0.ply
+            ├── gt.log
+            └── gt.info
+        ├── yoho_desc/
+            └── 0.npy
+        └── Keypoints/
+            └── cloud_bin_0Keypoints.txt
+├── 3dmatch_train/
+├── scannet/
+└── ETH/
+```
+
+## ✏️ Test
+To evalute SMVR on 3DMatch and 3DLoMatch, you can use the following commands:
+```
+python Test_cycle.py --dataset 3dmatch --rr
+```
+
+To evalute SGHR on ScanNet, you can use the following commands:
+```
+python Test_cycle.py --dataset scannet --ecdf
+```
+
+To evalute SGHR on ETH, you can use the following commands:
+```
+python Test_cycle.py --dataset ETH --topk 6 --inlierd 0.2 --tau_2 0.5 --rr
 ```
 
 ## 📚 Citation
